@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 public class ApiLoggingAspect {
     private static final Logger logger = LoggerFactory.getLogger(ApiLoggingAspect.class);
     
-    @Around("execution(* com.ranjith.user.controller..*(..))")
+    @Around("execution(* com.park.users.controller..*(..))")
     public Object logMethodAndTime(ProceedingJoinPoint pjp) throws Throwable {
         // Access method info like JoinPoint
         Object[] args = pjp.getArgs();
