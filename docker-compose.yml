@@ -50,7 +50,7 @@ services:
 
   
   auth-service:
-    build: ./auth-Service
+    build: ./auth-service
     depends_on:
       - eureka-server
       - user-service
