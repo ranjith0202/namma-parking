@@ -58,6 +58,15 @@ jobs:
           name: service-jars
           path: .
 
+      - name: Place JARs into service folders
+        run: |
+          mkdir -p auth-service/target user-service/target parking-service/target api-gateway/target eureka-server/target
+          cp auth-service-*.jar auth-service/target/ || true
+          cp user-service-*.jar user-service/target/ || true
+          cp parking-service-*.jar parking-service/target/ || true
+          cp api-gateway-*.jar api-gateway/target/ || true
+          cp eureka-server-*.jar eureka-server/target/ || true
+
       - name: Log in to GitHub Container Registry
         run: echo ${{ secrets.GITHUB_TOKEN }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
