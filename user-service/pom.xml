@@ -101,11 +101,11 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
-		<dependency>
+		<!--<dependency>
 			<groupId>com.park</groupId>
 			<artifactId>namma-parking-common</artifactId>
 			<version>0.0.1</version>
-		</dependency>
+		</dependency>-->
 	</dependencies>
 
 

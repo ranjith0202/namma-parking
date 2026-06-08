@@ -10,8 +10,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import com.park.common.dto.ApiResponse;
-import com.park.common.exception.CustomException;
+import com.park.users.dto.ApiResponse;
 import com.park.users.util.ResponseHandler;
 
 import jakarta.validation.ConstraintViolationException;

@@ -28,18 +28,24 @@ services:
     volumes:
       - pgadmin_data:/var/lib/pgadmin  
 
-
+  config-server:
+    build: ./config-server
+    ports:
+      - "8888:8888"
 
   eureka-server:
     build: ./eureka-server
     ports:
       - "8761:8761"
+    depends_on:
+      - config-server
 
   api-gateway:
     build: ./api-gateway
     ports:
       - "8080:8080"
     depends_on:
+      - config-server
       - eureka-server
 
   user-service:
@@ -52,6 +58,7 @@ services:
   auth-service:
     build: ./auth-service
     depends_on:
+      - config-server
       - eureka-server
       - user-service
 

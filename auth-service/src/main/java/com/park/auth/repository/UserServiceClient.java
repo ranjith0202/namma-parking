@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import com.park.auth.config.FeignConfig;
-import com.park.common.dto.ApiResponse;
-import com.park.common.dto.UserDto;
+import com.park.auth.dto.ApiResponse;
+import com.park.auth.dto.UserDto;
 
 @FeignClient(name = "USER-SERVICE",configuration = FeignConfig.class)
 public interface UserServiceClient {

@@ -8,11 +8,11 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Service;
 
+import com.park.auth.dto.ApiResponse;
 import com.park.auth.dto.LoginRequest;
+import com.park.auth.dto.UserDto;
 import com.park.auth.repository.UserServiceClient;
 import com.park.auth.util.JwtUtil;
-import com.park.common.dto.ApiResponse;
-import com.park.common.dto.UserDto;
 
 @Service
 public class AuthService {

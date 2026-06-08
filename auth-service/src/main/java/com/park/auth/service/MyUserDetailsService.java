@@ -11,8 +11,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import com.park.auth.dto.UserDto;
 import com.park.auth.repository.UserServiceClient;
-import com.park.common.dto.UserDto;
 
 @Service
 public class MyUserDetailsService implements UserDetailsService {

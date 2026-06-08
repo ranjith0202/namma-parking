@@ -3,7 +3,7 @@ package com.park.users.util;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import com.park.common.dto.ApiResponse;
+import com.park.users.dto.ApiResponse;
 
 public class ResponseHandler {
 	/**

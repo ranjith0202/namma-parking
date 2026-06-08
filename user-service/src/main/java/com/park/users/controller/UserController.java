@@ -18,9 +18,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.park.common.dto.ApiResponse;
-import com.park.common.dto.UserDto;
-import com.park.common.dto.UserPatchDto;
+import com.park.users.dto.ApiResponse;
+import com.park.users.dto.UserDto;
+import com.park.users.dto.UserPatchDto;
 import com.park.users.service.UserService;
 import com.park.users.util.ResponseHandler;
 

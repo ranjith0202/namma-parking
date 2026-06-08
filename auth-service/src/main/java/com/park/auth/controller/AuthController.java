@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.park.auth.dto.LoginRequest;
+import com.park.auth.dto.UserDto;
 import com.park.auth.service.AuthService;
-import com.park.common.dto.UserDto;
 
 import jakarta.validation.Valid;
 

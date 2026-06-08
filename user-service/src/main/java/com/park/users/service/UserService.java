@@ -8,8 +8,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.park.common.dto.UserDto;
-import com.park.common.dto.UserPatchDto;
+import com.park.users.dto.UserDto;
+import com.park.users.dto.UserPatchDto;
 import com.park.users.entity.UserEntity;
 import com.park.users.exception.ResourceNotFoundException;
 import com.park.users.repository.RolesInterface;
