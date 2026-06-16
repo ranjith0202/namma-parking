@@ -11,3 +11,14 @@ spring:
         git:
           uri: https://github.com/ranjith0202/microservices-config-repo
           clone-on-start: true
+          default-label: main
+          
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+
+  endpoint:
+    health:
+      show-details: always

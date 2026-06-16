@@ -32,24 +32,45 @@ services:
     build: ./config-server
     ports:
       - "8888:8888"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8888/actuator/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   eureka-server:
     build: ./eureka-server
     ports:
       - "8761:8761"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8761/actuator/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
     depends_on:
-      - config-server
+      config-server:
+        condition: service_healthy
 
   api-gateway:
     build: ./api-gateway
     ports:
       - "8080:8080"
     depends_on:
-      - config-server
-      - eureka-server
-
+      config-server:
+        condition: service_healthy
+      eureka-server:
+        condition: service_healthy
+        
   user-service:
     build: ./user-service
+    
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8081/actuator/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 60s
+    
     depends_on:
       - postgres
       - eureka-server
@@ -58,9 +79,12 @@ services:
   auth-service:
     build: ./auth-service
     depends_on:
-      - config-server
-      - eureka-server
-      - user-service
+      config-server:
+        condition: service_healthy
+      eureka-server:
+        condition: service_healthy
+      user-service:
+        condition: service_healthy
 
 volumes:
   postgres_data:
