@@ -1,0 +1,15 @@
+<div class="menu">
+ 
+
+  <div class="menu-items">
+    <button routerLink="/dashboard">Dashboard</button>
+    <button routerLink="/users/register">Register User</button>
+    <button routerLink="/users/list">Users List</button>
+   
+  </div>
+   <div class="logo">
+    Namma Parking 
+  </div>
+   <span>Welcome, {{ userName }}</span>
+    <button (click)="logout()">Logout</button>
+</div>
